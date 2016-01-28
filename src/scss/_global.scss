@@ -1,0 +1,177 @@
+html, body {
+	width:100%;
+	height:100%;
+
+	margin:0;
+	padding:0;
+
+	overflow-x: hidden;
+	position: static;
+	background: #f8f5ef;
+}
+
+* {
+	margin:0px;
+	padding:0px;
+}
+
+html {
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+h1,h2,h3,h4,text,p {
+	/*-webkit-font-smoothing: antialiased;*/
+	/*-moz-osx-webkit-font-smoothing: antialiased;*/
+	font-family: 'Conv_MaisonNeue-Medium';
+}
+
+button { 
+	border:none;
+	outline: 0; 
+	background: transparent;
+	cursor: pointer;
+} 
+
+.iframe-exp {
+	position: absolute;
+	width:100%;
+	height:100%;
+	border:0px;
+	top:0;
+	left:0;
+	z-index: 9;
+
+	transform:translate(100%);
+
+	transition:transform 1s ease-in-out;
+
+	.show-exp & {
+		transition:transform 1s ease-in-out;
+		transform:translate(0, 0);
+	}
+}
+
+.MainContainer {
+	max-width: 1280px;
+	overflow: auto;
+	margin: 0 auto;
+	padding-top: 5px;
+}
+
+.ExpButton {
+	position: relative;
+	width: 320px;
+	float: left;
+	box-sizing:border-box;
+	padding:5px;
+	overflow: hidden;
+	transition:padding .25s ease-in-out, background .25s ease-in-out;
+	
+	img {
+		width:310px;
+		height:310px;
+		border:0;
+		pointer-events:none;
+		transition:transform .25s ease-in-out;
+	}
+	span {
+		position: absolute;
+		width:290px;
+		height:290px;
+		border: 10px solid #252525;
+		opacity: 0;
+		pointer-events:none;
+		transition: opacity .25s ease-out;
+	}
+
+	p {
+		width:100%;
+		padding-top:25px;
+		padding-bottom:100px;
+		font-size:9px;
+		color:#181818;
+		opacity: .9;
+		text-align: right;
+		transition: opacity .25s ease-out;
+	}
+
+	&.is-Hidden {
+		display: none;
+	}
+
+	&:hover {
+		span {
+			opacity: 1;
+		}
+
+		img {
+			transform:scale(.95);
+		}
+	}
+
+}
+
+.Button-Back {
+	position: fixed;
+	top:20px;
+	left:20px;
+	color:#999;
+	letter-spacing: 2px;
+	opacity: 0;
+	pointer-events:none;
+	z-index: 10;
+
+	&:hover {
+		color:#333;		
+	}
+
+	transition:opacity .5s ease-out, color .5s ease-out;
+
+	.show-exp & {
+		opacity: 1;
+		pointer-events:auto;
+	}
+}
+
+.Header {
+	width:100%;
+	margin-top:37.5px;
+	display: flex;
+	align-items:center;
+	flex-direction:column;
+}
+
+.Header--bottom {
+	margin-top: -50px;
+	margin-bottom:37.5px;
+}
+
+.Logo-Container {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+
+.Logo-title {
+	font-family: 'Conv_MaisonNeue-Medium';
+	color:#181818;
+	font-size:5px;
+	letter-spacing: 1.5px;
+    transform: scale(.54);
+}
+
+.Logo-Canvas {
+	background:#181818;
+}
+
+.separator {
+	font-size:9px;
+	width:100%;
+	text-align: center;
+	color:#181818;
+	opacity: .9;
+	margin-top:65px;
+	margin-bottom:65px;
+}
